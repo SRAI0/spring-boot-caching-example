@@ -6,13 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MathController {
+public class AnswerController {
     @Autowired
     AnswerService answerService;
 
     @RequestMapping("/")
     public String index(Model model) throws InterruptedException {
-        model.addAttribute("answer", answerService.getAnswerWithComplicatedMath());
+        model.addAttribute("answer", answerService.getAnswer());
 
         return "index";
     }
