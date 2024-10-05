@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AnswerService {
-    @Cacheable("answer")
+    //@Cacheable("answer")
     public int getAnswer() throws InterruptedException {
-        Thread.sleep(5000);
-        return 42;
+        Thread.sleep(500);
+        return 1234567890;
     }
 }

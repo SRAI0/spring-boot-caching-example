@@ -2,18 +2,23 @@ package demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AnswerController {
     @Autowired
     AnswerService answerService;
 
-    @RequestMapping("/")
-    public String index(Model model) throws InterruptedException {
-        model.addAttribute("answer", answerService.getAnswer());
+    @GetMapping("/e")
+    public String index() throws InterruptedException {
+        String model = ("answer"+ answerService.getAnswer());
 
-        return "index";
+        return model;
     }
+
+    @GetMapping("/health")
+    public String Health(){
+        return "I'm Good.";
+    }
+
 }
