@@ -9,7 +9,7 @@ public class AnswerController {
     @Autowired
     AnswerService answerService;
 
-    @GetMapping("/e")
+    @GetMapping("/cache")
     public String index() throws InterruptedException {
 
         return ("answer"+ answerService.getAnswer());
