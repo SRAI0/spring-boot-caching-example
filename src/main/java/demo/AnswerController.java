@@ -11,9 +11,8 @@ public class AnswerController {
 
     @GetMapping("/e")
     public String index() throws InterruptedException {
-        String model = ("answer"+ answerService.getAnswer());
 
-        return model;
+        return ("answer"+ answerService.getAnswer());
     }
 
     @GetMapping("/health")
